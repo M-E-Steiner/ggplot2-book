@@ -119,7 +119,7 @@ Each of these geoms is two dimensional and requires both `x` and `y` aesthetics.
     but parameterised by the center of the rect and its size, `x`, `y`, 
     `width` and `height`. `geom_raster()` is a fast special case of 
     `geom_tile()` used when all the tiles are the same size.
-    \index{Image plot} \index{Level plot} \indexf{geom\_tile}. 
+    \index{Image plot} \index{Level plot} \indexf{geom\_tile} 
     \indexf{geom\_rect} \indexf{geom\_raster}
 
 Each geom is shown in the code below. Observe the different axis ranges for the bar, area and tile plots: these geoms take up space outside the range of the data, and so push the axes out.
@@ -137,7 +137,7 @@ p <- ggplot(df, aes(x, y, label = label)) +
 p + geom_point() + ggtitle("point")
 p + geom_text() + ggtitle("text")
 p + geom_bar(stat = "identity") + ggtitle("bar")
-p + geom_tile() + ggtitle("raster")
+p + geom_tile() + ggtitle("tile")
 ```
 
 ```{r}
@@ -1079,7 +1079,7 @@ Another approach to dealing with overplotting is to add data summaries to help g
 
 \indexf{stat\_summary\_bin} \indexf{stat\_summary\_2d} \index{Stats!summary}
 
-`geom_histogram()` and `geom_bin2d()` use a familiar geom, `geom_bar()` and `geom_raster()`, combined with a new statistical transformation, `stat_bin()` and `stat_bin2d()`. `stat_bin()` and `stat_bin2d()` combine the data into bins and count the number of observations in each bin. But what if we want a summary other than count? So far, we've just used the default statistical transformation associated with each geom. Now we're going to explore how to use  `stat_summary_bin()` to `stat_summary_2d()` to compute different summaries. 
+`geom_histogram()` and `geom_bin2d()` use a familiar geom, `geom_bar()` and `geom_raster()`, combined with a new statistical transformation, `stat_bin()` and `stat_bin2d()`. `stat_bin()` and `stat_bin2d()` combine the data into bins and count the number of observations in each bin. But what if we want a summary other than count? So far, we've just used the default statistical transformation associated with each geom. Now we're going to explore how to use  `stat_summary_bin()` and `stat_summary_2d()` to compute different summaries. 
 
 Let's start with a couple of examples with the diamonds data. The first example in each pair shows how we can count the number of diamonds in each bin; the second shows how we can compute the average price.
 
